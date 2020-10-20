@@ -1,0 +1,61 @@
+/* Apply to all the webpage */
+* {
+    box-sizing: border-box;
+}
+
+.header {
+    padding: 25px;
+    background-color: lightgray;
+    font-family: 'Abril Fatface', cursive;
+    font-size: 20px;
+}
+
+.btn-view-highscores {
+    float: left;
+    margin-top: -15px;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    font-family: 'Abril Fatface', cursive;
+    font-size: 20px;
+}
+
+.label-timer {
+    float: right;
+    margin-top: -15px;
+}
+
+.quiz-timer {
+    float: right;
+    margin-top : 7px;
+    border: none;
+    border-color: transparent;
+    background-color: inherit;
+}
+
+.container {
+    padding: 20px;
+    text-align: center;
+}
+
+.btn-start-quiz {
+    font-size: 16px;
+    padding: 10px 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background-color: rgb(146, 9, 146);
+    color: #fff;
+}
+
+.btn-start-quiz:hover {
+    background-color: rgb(114, 6, 114);
+}
+
+.btn-start-quiz:active {
+    background-color: rgb(114, 6, 114);
+    transform: translateY(4px);
+}
