@@ -18,18 +18,47 @@
     <!-- Code Quiz header-->
     <div class="header">
         <button class="btn-view-highscores" id="view-highscores">View Highscores</button>
-        <label class="label-timer" for="quiz-timer">Time: 
-            <input type="number" name="time" class="quiz-timer" id="quiz-timer" value="00" />
-        </label>
+        <div class="label-timer">Time: &nbsp;
+            <div id="timer">150</div>
+        </div>
     </div>
 
     <!-- Quiz content -->
     <div class="container">
-        <h1>Coding Quiz Challenge</h1>
-        <p>Try to answer the following code-related questions within the time limit.</p>
-        <p>Keep in mind that incorrect answers will penalize our scoretime by the seconds!</p>
-        <div><button class="btn-start-quiz">Start Quiz</button></div>
+        <div class="quiz-starter">
+            <h1>Coding Quiz Challenge</h1>
+            <p>Try to answer the following code-related questions within the time limit.</p>
+            <p>Keep in mind that incorrect answers will penalize our scoretime by the seconds!</p>
+            <div><button class="btn-start-quiz" id="start">Start Quiz</button></div>
+        </div>
     </div>
     
+    <div class="question-content">
+        <div id="quiz" style="display: none;">
+            <div id="question"></div>
+            <div id="question-choices">
+                <ol class="choices">
+                    <li id="choice-one"></li>
+                    <li id="choice-two"></li>
+                    <li id="choice-three"></li>
+                    <li id="choice-four"></li>
+                </ol>
+            </div>
+            <br>
+            <div class="wrong-correct-answer" id="wrong-correct-answer"></div>
+        </div>
+    </div>
+
+    <div class="all-done-page" style="display: none;">
+        <h1>All done!</h1>
+        <div id="final-score"></div>
+        <form>
+            <label for="user-initial">Enter initials: &nbsp;</label>
+            <input type="text" id="user-initial" name="user initials" /> &nbsp; <input class="btn-submit" type="submit" value="Submit">
+        </form>
+        <!-- <input type="reset" value="Clear"> -->
+    </div>
+    
+    <script src="code_quiz.js"></script>
 </body>
 </html>
