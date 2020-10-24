@@ -7,22 +7,25 @@
 
     <!-- CSS style -->
     <link rel="stylesheet"  href="style.css">
+    <link href="index.html">
 
     <!-- Google font style -->
     <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <!-- Display the user initials and scores with go back and clear button -->
     <div class="container">
-        <div class="child">
+        <div class="highscores-content">
             <h1>Highscores</h1>
-            <div id="user-name-score"></div>
-            <button class="btn-go-back" onclick="goBack()">Go Back</button>
-            <button class="btn-clear-highscores">Clear Highscores</button>
+            <div class="user-initials-score" id="user-initials-score"></div>
+            <button class="btn-go-back" id="btn-go-back" onclick="goBackBtn()">Go Back</button>
+            <button class="btn-clear-highscores" id="btn-clear-highscores">Clear Highscores</button>
         </div>
     </div>
-    
 
+    <!-- JavaScript -->
     <script src="code_quiz.js"></script>
 </body>
 </html>
