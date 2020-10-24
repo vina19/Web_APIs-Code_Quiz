@@ -7,6 +7,7 @@
 
     <!-- CSS style -->
     <link rel="stylesheet"  href="style.css">
+    <link href="highscores.html">
 
     <!-- Google font style -->
     <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
@@ -17,48 +18,48 @@
 
     <!-- Code Quiz header-->
     <div class="header">
-        <button class="btn-view-highscores" id="view-highscores">View Highscores</button>
+        <button class="btn-view-highscores" id="view-scores">View Highscores</button>
         <div class="label-timer">Time: &nbsp;
-            <div id="timer">150</div>
+            <div id="timer">100</div>
         </div>
     </div>
 
     <!-- Quiz content -->
     <div class="container">
-        <div class="quiz-starter">
+
+        <!-- Quiz starter which include quiz description and start quiz button -->
+        <div class="quiz-starter" id="quiz-starter">
             <h1>Coding Quiz Challenge</h1>
             <p>Try to answer the following code-related questions within the time limit.</p>
             <p>Keep in mind that incorrect answers will penalize our scoretime by the seconds!</p>
-            <div><button class="btn-start-quiz" id="start">Start Quiz</button></div>
+            <button class="btn-start-quiz" id="start-btn">Start Quiz</button>
+        </div>
+
+        <!-- Quiz content which include questions, questions answer choices, and to verify the answer -->
+        <div class="question-content" id="quiz-content">
+            <div id="question"></div>
+            <br>
+            <div id="question-choices"></div>
+            <br>
+            <hr id="verify-answer-line">
+            <div class="verify-answer" id="verify-answer"></div>
         </div>
     </div>
     
-    <div class="question-content">
-        <div id="quiz" style="display: none;">
-            <div id="question"></div>
-            <div id="question-choices">
-                <ol class="choices">
-                    <li id="choice-one"></li>
-                    <li id="choice-two"></li>
-                    <li id="choice-three"></li>
-                    <li id="choice-four"></li>
-                </ol>
-            </div>
-            <br>
-            <div class="wrong-correct-answer" id="wrong-correct-answer"></div>
-        </div>
-    </div>
-
-    <div class="all-done-page" style="display: none;">
+    <!-- All done page where when the user finish, it will display theri score and 
+    the user will be asked to input their initial to be submitted to the local storage and 
+    will be display in high scores page -->
+    <div class="all-done" id="all-done" style="display: none;">
         <h1>All done!</h1>
         <div id="final-score"></div>
+        <br>
         <form>
             <label for="user-initial">Enter initials: &nbsp;</label>
-            <input type="text" id="user-initial" name="user initials" /> &nbsp; <input class="btn-submit" type="submit" value="Submit">
+            <input type="text" id="user-initial" name="user initials" /> &nbsp; <input class="btn-initial-score-submit" id="btn-initial-score-submit" type="submit" value="Submit">
         </form>
-        <!-- <input type="reset" value="Clear"> -->
     </div>
-    
+
+    <!-- JavaScript -->
     <script src="code_quiz.js"></script>
 </body>
 </html>
