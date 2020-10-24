@@ -241,3 +241,5 @@ function goBackBtn() {
         window.location.replace("./index.html");
     });
 }
+
+viewScores();
