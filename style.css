@@ -41,9 +41,24 @@
     text-align: center;
 }
 
-.child {
+.highscores-content{
     position: absolute;
     top: 50%;
+    left: 25%;
+    margin: 0 0;
+}
+
+.question-content{
+    padding: 35px;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    margin: 0 0;
+}
+
+.all-done {
+    position: absolute;
+    top: 15%;
     left: 25%;
     margin: 0 0;
 }
@@ -70,7 +85,7 @@
     transform: translateY(4px);
 }
 
-.btn-submit, .btn-go-back, .btn-clear-highscores {
+.btn-initial-score-submit, .btn-go-back, .btn-clear-highscores, .btn-choices {
     font-size: 16px;
     padding: 5px 19px;
     cursor: pointer;
