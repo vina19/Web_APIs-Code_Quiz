@@ -1,4 +1,5 @@
 // view highscore button and the timer
+let showHeader = document.getElementById("header");
 let viewHighscores = document.getElementById("view-scores");
 let time = document.getElementById("timer");
 
@@ -229,7 +230,6 @@ function renderAllScores() {
         let storedScore = obj.score;
         let finalresult = document.createElement("ol");
         finalresult.innerText = `${initials}: ${storedScore}`;
-        console.log(finalresult);
         viewUserInitialScore.append(finalresult); 
     });
 }
@@ -239,6 +239,10 @@ function viewScores(){
     viewHighscores.addEventListener("click", function(e) {
         e.preventDefault();
         highscoresPage.style.display = "block";
+        showQuizStarter.style.display = "none";
+        showHeader.style.display = "none";
+
+        clearScoresBtn();
     });
 }
 
@@ -246,7 +250,8 @@ function viewScores(){
 function clearScoresBtn() {
     clearUserDataBtn.addEventListener("click", function(e){
         e.preventDefault();
-        window.localStorage.removeItem("saveUserData");
+        viewUserInitialScore.remove();
+        localStorage.clear();
     });
 }
 

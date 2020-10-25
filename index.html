@@ -17,7 +17,7 @@
 <body>
 
     <!-- Code Quiz header-->
-    <div class="header">
+    <div class="header" id="header">
         <button class="btn-view-highscores" id="view-scores">View Highscores</button>
         <div class="label-timer">Time: &nbsp;
             <div id="timer">100</div>
@@ -64,8 +64,8 @@
         <div class="highscores-content" id="highscores-content" style="display: none;">
             <h1>Highscores</h1>
             <ol class="user-initials-score" id="user-initials-score"></ol>
-            <button class="btn-go-back" id="btn-go-back">Go Back</button>
-            <button class="btn-clear-highscores" id="btn-clear-highscores">Clear Highscores</button>
+            <button class="btn-go-back" id="btn-go-back" onclick="goBackBtn()">Go Back</button>
+            <button class="btn-clear-highscores" id="btn-clear-highscores" onclick="clearScoresBtn()">Clear Highscores</button>
         </div>
     </div>
 
