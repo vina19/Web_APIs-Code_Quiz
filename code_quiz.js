@@ -216,8 +216,9 @@ function renderAllScores() {
     // Show the highscores page
     highscoresPage.style.display = "block";
 
-    // Hide all done page
+    // Hide all done page and header
     showAllDonePage.style.display = "none";
+    showHeader.style.display = "none";
 
     let scoresArray = defineScoresArray(storedHighscores, emptyArray);
 

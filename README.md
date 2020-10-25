@@ -27,13 +27,21 @@
 
 ![hw4-1](https://user-images.githubusercontent.com/46719712/97091294-92954800-1600-11eb-9b52-c68a572ca224.png)
 
-* Quiz Questions:
+* Two example of how the questions page look like:
+
+![hw4-2](https://user-images.githubusercontent.com/46719712/97097440-77e1c400-163e-11eb-80fb-ffc92b9207ec.png)
+
+![hw4-3](https://user-images.githubusercontent.com/46719712/97097445-7912f100-163e-11eb-9929-0e1057f0e5ab.png)
 
 
 * Finish page:
 
+![hw4-4](https://user-images.githubusercontent.com/46719712/97097446-7adcb480-163e-11eb-981b-fb6b56d58fac.png)
+
 
 * High scores page:
+
+![hw4-5](https://user-images.githubusercontent.com/46719712/97097447-7c0de180-163e-11eb-8f57-12fcdb2b1c37.png)
 
 ## Created using:
 #### - HTML
