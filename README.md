@@ -23,16 +23,17 @@
     https://vina19.github.io/Web_APIs-Code_Quiz/
 
 ## Code Quiz
-#### Home page:
+* Home page:
+
+![hw4-1](https://user-images.githubusercontent.com/46719712/97091294-92954800-1600-11eb-9b52-c68a572ca224.png)
+
+* Quiz Questions:
 
 
-#### Quiz Questions:
+* Finish page:
 
 
-#### Finish page:
-
-
-#### High scores page:
+* High scores page:
 
 ## Created using:
 #### - HTML

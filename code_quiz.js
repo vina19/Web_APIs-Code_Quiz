@@ -23,7 +23,7 @@ let submitScoreBtn = document.getElementById("btn-initial-score-submit");
 
 
 // Highscores page where user initial and highscores being kept and give the user ability to clear the highscores info
-let highscoresPage = document.getElementsByClassName("highscores-content");
+let highscoresPage = document.getElementById("highscores-content");
 let viewUserInitialScore = document.getElementById("user-initials-score");
 let backBtn = document.getElementById("btn-go-back");
 let clearUserDataBtn = document.getElementById("btn-clear-highscores");
@@ -41,40 +41,45 @@ let questions = [
     { 
         question: "Commonly used data types DO NOT include: ",
         quizChoices: ["strings", "booleans", "alerts", "numbers"],
-        correctAnswer: "alerts", 
+        correctAnswer: "3. alerts", 
     },
     {
         question: "The condition in an if / else statement is enclosed within ____.",
         quizChoices: ["quotes", "curly brackets", "parentheses", "square brackets"],
-        correctAnswer: "parentheses", 
+        correctAnswer: "3. parentheses", 
     },
     {
         question: "Arrays in JavaScript can be used to store ____.",
         quizChoices: ["numbers and strings", "other arrays", "booleans", "all of the above"],
-        correctAnswer: "all of the above", 
+        correctAnswer: "4. all of the above", 
     },
     {
         question: "String values must be enclosed within ____ when being assigned to variable.",
         quizChoices: ["commas", "curly brackets", "quotes", "parentheses"],
-        correctAnswer: "quotes", 
+        correctAnswer: "3. quotes", 
     },
     {
         question: "A very useful tool used during development and debugging for printing content to the debugger is: ",
         quizChoices: ["JavaScript", "terminal/bash", "for loops", "console log"],
-        correctAnswer: "console log", 
+        correctAnswer: "3. console log", 
     },
 ];
 
-// After start button click show quiz content, hide quiz starter and the all done page, show the questions,
-// and start the timer.
+// Start button click event listener
 startBtn.addEventListener("click", function() {
 
+    // Show quiz content
     showQuizContent.style.display = "block";
+
+    // Hide quiz starter, the all done page, and high scores page, 
     showQuizStarter.style.display = "none";
     showAllDonePage.style.display = "none";
+    highscoresPage.style.display = "none";
 
+    // Show the questions after the start button clicked
     renderQuestions();
 
+    // Start the timer.
     let timeInterval = setInterval(function() {
         totalQuizTime--;
         time.textContent ="";
@@ -90,9 +95,12 @@ startBtn.addEventListener("click", function() {
 // Function to render the questions and the questions answer choices
 function renderQuestions() {
 
-    // Hide quiz starter and show the quiz questions and the questions answer choices
-    showQuizStarter.style.display = "none";
+    //show the quiz questions and the questions answer choices
     showQuizContent.style.display = "block";
+
+    // Hide quiz starter and high scores page 
+    showQuizStarter.style.display = "none";
+    highscoresPage.style.display = "none";
 
     // If the questionCount less than questions length display the questions and the questions answer choices.
     if ( questionCount < questions.length) {
@@ -104,7 +112,7 @@ function renderQuestions() {
             let choicesEl = document.createElement("ol");
             let choiceBtn = document.createElement("button");
             choicesEl.appendChild(choiceBtn);
-            choiceBtn.innerText = questions[questionCount].quizChoices[i];
+            choiceBtn.innerText = [i+1] + ". " + questions[questionCount].quizChoices[i];
             choiceBtn.setAttribute("data-id", i);
             choiceBtn.setAttribute("class", "btn-choices");
 
@@ -146,10 +154,13 @@ function renderQuestions() {
 // Getting the user score and display it after user finish answering the questions
 function getUserScore() {
 
-    // Hide verify answer and verify answer line, and show the all done page
+    // Show the all done page
     showAllDonePage.style.display = "block";
+
+    // Hide verify answer, verify answer line, and high score page.
     verifyAnswer.style.display = "none";
     document.getElementById("verify-answer-line").style.display = "none";
+    highscoresPage.style.display = "none";
 
     choices.textContent = "";
 
@@ -159,9 +170,6 @@ function getUserScore() {
     // After the submit button click
     submitScoreBtn.addEventListener("click", function(e) {
         e.preventDefault();
-
-        // go to the high scores page
-        window.location.replace("./highscores.html");
 
         // defining score from stored highscores array from local storage and the empty array that later 
         let scoresArray = defineScoresArray(storedHighscores, emptyArray);
@@ -201,8 +209,15 @@ function defineScoresArray(arr1, arr2){
     }
 }
 
-// display all the scores
+// Display all the scores
 function renderAllScores() {
+
+    // Show the highscores page
+    highscoresPage.style.display = "block";
+
+    // Hide all done page
+    showAllDonePage.style.display = "none";
+
     let scoresArray = defineScoresArray(storedHighscores, emptyArray);
 
     // for each object in the scores array,
@@ -214,6 +229,7 @@ function renderAllScores() {
         let storedScore = obj.score;
         let finalresult = document.createElement("ol");
         finalresult.innerText = `${initials}: ${storedScore}`;
+        console.log(finalresult);
         viewUserInitialScore.append(finalresult); 
     });
 }
@@ -222,7 +238,7 @@ function renderAllScores() {
 function viewScores(){
     viewHighscores.addEventListener("click", function(e) {
         e.preventDefault();
-        window.location.replace("./highscores.html");
+        highscoresPage.style.display = "block";
     });
 }
 
@@ -238,7 +254,7 @@ function clearScoresBtn() {
 function goBackBtn() {
     backBtn.addEventListener("click", function(e) {
         e.preventDefault();
-        window.location.replace("./index.html");
+        window.location.reload();
     });
 }
 
