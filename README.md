@@ -18,7 +18,7 @@
 
 #### Access the folder with your favorite code editor.
 
-## Project Example
+## Live Link to Deployed App
 
 [https://vina19.github.io/Web_APIs-Code_Quiz/](https://vina19.github.io/Web_APIs-Code_Quiz/)
 
